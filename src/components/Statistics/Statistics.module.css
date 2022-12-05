@@ -1,0 +1,16 @@
+.title {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 22px;
+}
+
+.item {
+  padding: 5px;
+}
