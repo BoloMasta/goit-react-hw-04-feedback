@@ -3,13 +3,9 @@ import PropTypes from 'prop-types';
 import { Component } from 'react';
 
 export class FeedbackOptions extends Component {
-  onLeaveFeedback = e => {
-    console.log(e.target.name);
-    this.setState({ good: this.state.good + 1 });
-  };
-
   render() {
-    const { options } = this.props;
+    // const { options } = this.props;
+    const { onLeaveFeedback } = this.props;
 
     return (
       <div className={css.feedback}>
@@ -18,7 +14,7 @@ export class FeedbackOptions extends Component {
             key={option}
             type="button"
             name={option}
-            onClick={this.onLeaveFeedback}
+            onClick={onLeaveFeedback}
           >
             {option}
           </button>

@@ -15,28 +15,31 @@ export class App extends React.Component {
     };
   }
 
-  // onLeaveFeedback = e => {
-  //   console.log(e.target);
-  //   const { name } = e.target;
-  //   this.setState(prevState => ({
-  //     [name]: prevState[name] + 1,
-  //   }));
-  // };
+  onLeaveFeedback = e => {
+    const { name } = e.target;
+    this.setState(prevState => ({
+      [name]: prevState[name] + 1,
+    }));
+  };
 
   render() {
     return (
       <>
         <Section title="Please leave feedback">
-          <FeedbackOptions options={['good', 'neutral', 'bad']} />
+          <FeedbackOptions
+            options={['good', 'neutral', 'bad']}
+            onLeaveFeedback={this.onLeaveFeedback}
+          />
           <Statistics
             good={this.state.good}
             neutral={this.state.neutral}
             bad={this.state.bad}
             total={this.state.good + this.state.neutral + this.state.bad}
-            positivePercentage={
-              this.state.good /
-              (this.state.good + this.state.neutral + this.state.bad)
-            }
+            positivePercentage={(
+              (this.state.good /
+                (this.state.good + this.state.neutral + this.state.bad)) *
+              100
+            ).toFixed(0)}
           />
           <Notification message="No feedback given" />
         </Section>
