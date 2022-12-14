@@ -16,7 +16,9 @@ export class App extends React.Component {
 
   onLeaveFeedback = e => {
     const { name } = e.target;
-    this.setState({ [name]: this.state[name] + 1 });
+    this.setState(prevState => ({
+      [name]: prevState[name] + 1,
+    }));
   };
 
   countTotalFeedback = () => {
@@ -24,11 +26,15 @@ export class App extends React.Component {
   };
 
   countPositiveFeedbackPercentage = () => {
-    return (
-      (this.state.good /
-        (this.state.good + this.state.neutral + this.state.bad)) *
-      100
-    ).toFixed(0);
+    if (this.countTotalFeedback() === 0) {
+      return 0;
+    } else {
+      return (
+        (this.state.good /
+          (this.state.good + this.state.neutral + this.state.bad)) *
+        100
+      ).toFixed(0);
+    }
   };
 
   render() {
