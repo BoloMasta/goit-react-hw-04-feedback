@@ -26,15 +26,7 @@ export class App extends React.Component {
   };
 
   countPositiveFeedbackPercentage = () => {
-    if (this.countTotalFeedback() === 0) {
-      return 0;
-    } else {
-      return (
-        (this.state.good /
-          (this.state.good + this.state.neutral + this.state.bad)) *
-        100
-      ).toFixed(0);
-    }
+    return Math.round((this.state.good / this.countTotalFeedback()) * 100);
   };
 
   render() {
