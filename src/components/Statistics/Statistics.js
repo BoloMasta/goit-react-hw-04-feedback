@@ -8,25 +8,23 @@ export const Statistics = ({
   bad,
   total,
   positivePercentage,
-}) => {
-  return (
-    <>
-      <h2 className={css.title}>Statistics</h2>
+}) => (
+  <>
+    <h2 className={css.title}>Statistics</h2>
 
-      {total === 0 ? (
-        <Notification message="No feedback given" />
-      ) : (
-        <ul className={css.list}>
-          <li className={css.item}>Good: {good}</li>
-          <li className={css.item}>Neutral: {neutral}</li>
-          <li className={css.item}>Bad: {bad}</li>
-          <li className={css.item}>Total: {total}</li>
-          <li className={css.item}>Positive feedback: {positivePercentage}%</li>
-        </ul>
-      )}
-    </>
-  );
-};
+    {total === 0 ? (
+      <Notification message="No feedback given" />
+    ) : (
+      <ul className={css.list}>
+        <li className={css.item}>Good: {good}</li>
+        <li className={css.item}>Neutral: {neutral}</li>
+        <li className={css.item}>Bad: {bad}</li>
+        <li className={css.item}>Total: {total}</li>
+        <li className={css.item}>Positive feedback: {positivePercentage}%</li>
+      </ul>
+    )}
+  </>
+);
 
 Statistics.propTypes = {
   good: PropTypes.number,
