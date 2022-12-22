@@ -1,5 +1,6 @@
-### ⚛️ GOIT - React - Homework 2
+### ⚛️ GOIT - React - Homework 4
 
-React component to collect feedback.<br> 
+React App to collect feedback using hooks.<br>
 
-You can see it <a href="https://bolomasta.github.io/goit-react-hw-02-feedback/">HERE</a>
+You can see it
+<a href="https://bolomasta.github.io/goit-react-hw-04-feedback/">HERE</a>
