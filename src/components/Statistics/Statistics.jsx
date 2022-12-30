@@ -1,17 +1,10 @@
 import css from './Statistics.module.css';
 import PropTypes from 'prop-types';
-import { Notification } from '../Notification/Notification';
+import Notification from '../Notification/Notification';
 
-export const Statistics = ({
-  good,
-  neutral,
-  bad,
-  total,
-  positivePercentage,
-}) => (
+const Statistics = ({ good, neutral, bad, total, positivePercentage }) => (
   <>
     <h2 className={css.title}>Statistics</h2>
-
     {total === 0 ? (
       <Notification message="No feedback given" />
     ) : (
@@ -33,3 +26,5 @@ Statistics.propTypes = {
   total: PropTypes.number,
   positivePercentage: PropTypes.number,
 };
+
+export default Statistics;
