@@ -13,9 +13,9 @@ export const App = () => {
 
   const onLeaveFeedback = e => {
     const { name } = e.target;
-    setFeedback(prevFeedback => ({
-      ...prevFeedback,
-      [name]: prevFeedback[name] + 1,
+    setFeedback(prevState => ({
+      ...prevState,
+      [name]: prevState[name] + 1,
     }));
   };
 
